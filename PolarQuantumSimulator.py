@@ -229,7 +229,7 @@ class PolarQuantumCircuit:
         """
         Apply the PHASE gate to the 'target_qubit' with a phase change 'phi'.
 
-            keep the theta in _state: in the range [-pi, pi]
+            keep the theta in _state: in the range [-pi, pi)
         """
         self._validate_qubit_index(target_qubit)
         self._applied_gates.append(
@@ -254,7 +254,7 @@ class PolarQuantumCircuit:
         """
         Apply the CPHASE gate to the 'target_qubit' with a phase change 'phi' only if the 'control_qubit' is 1.
 
-            keep the theta in _state: in the range [-pi, pi]
+            keep the theta in _state: in the range [-pi, pi)
         """
         self._validate_qubit_index(target_qubit)
         self._applied_gates.append(
@@ -276,7 +276,7 @@ class PolarQuantumCircuit:
         """
         Apply the CCPHASE gate to the 'target_qubit' with a phase change 'phi' only if the 'control_qubits' are 1s.
 
-            keep the theta in _state: in the range [-pi, pi]
+            keep the theta in _state: in the range [-pi, pi)
         """
         for i in control_qubits:
             self._validate_qubit_index(i)
@@ -330,7 +330,7 @@ class PolarQuantumCircuit:
         """
         Apply the SWAP gate to the 'target_qubit1' and 'target_qubit2'.
 
-            keep the theta in _state: in the range [-pi, pi]
+            keep the theta in _state: in the range [-pi, pi)
         """
         self._validate_qubit_index(target_qubit1)
         self._validate_qubit_index(target_qubit2)
